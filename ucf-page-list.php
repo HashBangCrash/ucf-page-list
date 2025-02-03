@@ -3,7 +3,7 @@
 /*
 Plugin Name: UCF Page List
 Description: Displays a list of immediate child pages for a specified parent page.
-Version: 1.0
+Version: 1.0.1
 Author: Stephen Schrauger
 Plugin URI: https://github.com/HashBangCrash/ucf-page-list
 Github Plugin URI: HashBangCrash/ucf-page-list
