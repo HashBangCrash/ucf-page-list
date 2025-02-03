@@ -73,6 +73,7 @@ function create_fields()
                     'type' => 'page_link',
                     'post_type' => array('page'),
                     'allow_null' => true,
+                    'allow_archives' => 0,
                     'multiple' => false,
                     'instructions' => 'Select the parent page. Only pages with child pages are listed.',
                     'conditional_logic' => array(
