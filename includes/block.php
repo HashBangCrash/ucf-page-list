@@ -24,6 +24,8 @@ function child_pages_menu_block_render_callback($block, $content = '', $is_previ
         $class_name = $default_class;
     }
 
+    $safe_class_name = esc_attr($class_name);
+
     // Determine the parent page ID
     if ($use_manual_id) {
         // Use the manually entered Page ID
@@ -82,7 +84,7 @@ function child_pages_menu_block_render_callback($block, $content = '', $is_previ
 
         // wrap list items in an unordered list
         $menu_html = "
-        <ul class='${class_name}'>
+        <ul class='${safe_class_name}'>
             $menu_items_html
         </ul>
         ";
