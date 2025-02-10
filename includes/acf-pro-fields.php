@@ -17,13 +17,18 @@ function register_child_pages_menu_block() {
     if (function_exists('acf_register_block_type')) {
         acf_register_block_type(array(
             'name'              => 'ucf-page-list',
-            'title'             => __('Child Pages Menu'),
+            'title'             => __('Child Page List'),
             'description'       => __('Displays a list of immediate child pages.'),
             'render_callback'   => 'ucf_page_list\\block\\child_pages_menu_block_render_callback',
             'enqueue_assets'    => 'ucf_page_list\\enqueue_js_css',
             'category'          => 'widgets',
             'icon'              => 'list-view',
-            'keywords'          => array('child', 'pages', 'menu'),
+            'keywords'          => array('child', 'pages', 'menu', 'list'),
+            'supports'        => array(
+                'align'            => false,
+                'multiple'         => true,
+                'customClassName'  => true,
+            ),
         ));
     }
 }

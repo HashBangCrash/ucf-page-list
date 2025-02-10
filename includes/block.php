@@ -14,6 +14,16 @@ function child_pages_menu_block_render_callback($block, $content = '', $is_previ
     // Get the toggle value
     $use_manual_id = get_field('use_manual_id');
 
+    // Get custom “className” from the $block array.
+    $class_name = isset($block['className']) ? $block['className'] : '';
+
+    $default_class = 'child-pages-menu';
+    if( $class_name ) {
+        $class_name = $default_class . ' ' . $class_name;
+    } else {
+        $class_name = $default_class;
+    }
+
     // Determine the parent page ID
     if ($use_manual_id) {
         // Use the manually entered Page ID
@@ -61,7 +71,7 @@ function child_pages_menu_block_render_callback($block, $content = '', $is_previ
             $menu_items_html .= "
             <li>
                 <a 
-                href='$permalink'
+                href='${permalink}'
                 class='child-page-item'
                 >
                 $title
@@ -72,7 +82,7 @@ function child_pages_menu_block_render_callback($block, $content = '', $is_previ
 
         // wrap list items in an unordered list
         $menu_html = "
-        <ul class='child-pages-menu'>
+        <ul class='${class_name}'>
             $menu_items_html
         </ul>
         ";
